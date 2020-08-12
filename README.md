@@ -2,16 +2,21 @@
 
 ***
 파스타 클라우드 활용
-1. 스프링프로젝트 bora_mysql 변경.
-2. 이클립스에서 bora_mysql프로젝트를 파스타에 배포.(Hsql용)
-3.bora_mysel 로컬 mysql서버와 연동처리.
+1. 스프링프로젝트 bora-egov 변경 -> bora-egov
+2. 이클립스에서 bora-egov 프로젝트를 파스타에 배포.(Mysql용)
+3. bora-egov 프로젝트용 클라우드 DB생성: 서비스명은 egov-mysql-db
 4. 파스타 클라우드에서 Mysql서비스 생성.(원격접속이름과 암호를 확인가능)
-5. 원격 phpmyadmin 툴(워크벤치와 비슷)을 파스타 클라우드에 PHP앱 생성 후 배포.
-6. bora_mysql 프로젝트를 클라우드용 DB사용으로 변경 후 파스타에 재배포.
-   http://bora_mysql.paas-ta.org
-7. egov_sht 프로젝트 이름 변경: egov_bora 파스타에 배포(Mysql 클라우드사용)
-   http://egov_bora.paas-ta.org
+5. 이미 생성된 phpmyadmin 어플리케이션명: bora-myadmin 실행.
+6. http://bora_myadmin.paas-ta.org 접속후 전자정부 프로젝트용 더미데이터 인서트.
+7. http://bora-egov.paas-ta.org 사이트에서 파스타 배포결과 확인.
 ***
+
+### 20200812(수) 작업내역(아래)
+- 4). Junit 테스트로 CRUD 확인.
+- 3). Service 클래스에서 insertMember, updateMember, deleteMember매서드 생성
+- 2). DAO 클래스에서  insertMember, updateMember, deleteMember 매서드 생성
+- 1). 쿼리 생성 :
+src/main/resources/egovframework/mapper/com/member/member_mysql.xml
 
 ### 20200811(화) 작업내역(아래)
 - Junit 테스터로 DAO의 selectMember 실행하기
