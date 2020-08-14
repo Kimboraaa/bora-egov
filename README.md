@@ -11,7 +11,44 @@
 7. http://bora-egov.paas-ta.org 사이트에서 파스타 배포결과 확인.
 ***
 
-### 20200812(수) 작업내역(아래)
+### 20200814(금) 작업예정(아래)
+- 3). 로컬PC에서 결과 확인 후 파스타에 배포예정
+- 2). 멤버 뷰, 업데이트, 인서트 페이지 생성.
+
+```
+우리가 기존에 작업한 스프링 프로젝트에서 아래처럼
+<form id="폼이름" name="폼이름">
+</form>
+전자정부 프로젝트에서는 아래처럼
+<form:form commandName="폼이름" name="폼이름" >
+</form:form>
+```
+- 1). 컨트롤러에 경로추가(아래)
+- edu.human.com.member.web 패키지생성(컨트롤러용 패키지)
+- MemberController.java @Controller클래스 생성.
+- com/member/selectMember.do 경로추가(아래)
+- 0). 관리자관리 경로 com/member/selectMember.do 로그인체크 추가
+로그인체크 관련 파일: egov-com-servlet.xml(서블렛파일) 인터셉터 관리
+뷰리졸버(viewresolver):뷰단(jsp)단 해석기계.(웹페이지루트, 확장자 지정)
+
+```
+/**
+   *관리자관리 목록을 조회한다.
+*/
+@RequestMapping("/com/member/selectMember.do")
+public List<EmployerInfoVO> selectMember(Model model) throws Exception {
+   model.addAttribute("resultList", 멤버서비스호출);
+   return "com/member/list";
+}
+
+### 20200812-14(수-목) 작업내역(아래)
+- 6). jsp폴더(뷰폴더)에 inc/EgovIncLeftmenu.jsp 파일수정
+
+```
+메뉴 내용 추가(아래)
+<li class="dept02"><a href="javascript:fn_main_headPageAction('57','com/member/selectMember.do')">관리자관리</a></li>
+```
+- 5). viewMember 쿼리+DAO+Service매서드 추가 후
 - 4). Junit 테스트로 CRUD 확인.
 - 3). Service 클래스에서 insertMember, updateMember, deleteMember매서드 생성
 - 2). DAO 클래스에서  insertMember, updateMember, deleteMember 매서드 생성

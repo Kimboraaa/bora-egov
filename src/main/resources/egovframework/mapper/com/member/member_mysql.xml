@@ -5,33 +5,33 @@
       SELECT * FROM lettnemplyrinfo
    </select>
    <insert id="insertMember">
-      insert into lettnemplyrinfo (
-         ESNTL_ID,
-         EMPLYR_ID,
-         PASSWORD,
-         PASSWORD_HINT,
-         PASSWORD_CNSR,
-         USER_NM,
-         ZIP,
-         HOUSE_ADRES,
-         EMAIL_ADRES,
-         GROUP_ID,
-         ORGNZT_ID,
-         EMPLYR_STTUS_CODE
-         ) values (
-         #{ESNTL_ID},
-         #{EMPLYR_ID},
-         #{PASSWORD},
-         #{PASSWORD_HINT},
-         #{PASSWORD_CNSR},
-         #{USER_NM},
-         #{ZIP},
-         #{HOUSE_ADRES},
-         #{EMAIL_ADRES},
-         #{GROUP_ID},
-         #{ORGNZT_ID},
-         #{EMPLYR_STTUS_CODE}
-         )
+   insert into lettnemplyrinfo (
+      ESNTL_ID,
+      EMPLYR_ID,
+      PASSWORD,
+      PASSWORD_HINT,
+      PASSWORD_CNSR,
+      USER_NM,
+      ZIP,
+      HOUSE_ADRES,
+      EMAIL_ADRES,
+      GROUP_ID,
+      ORGNZT_ID,
+      EMPLYR_STTUS_CODE
+      ) values (
+      #{ESNTL_ID},
+      #{EMPLYR_ID},
+      #{PASSWORD},
+      #{PASSWORD_HINT},
+      #{PASSWORD_CNSR},
+      #{USER_NM},
+      #{ZIP},
+      #{HOUSE_ADRES},
+      #{EMAIL_ADRES},
+      #{GROUP_ID},
+      #{ORGNZT_ID},
+      #{EMPLYR_STTUS_CODE}
+      )
    </insert>
    <update id="updateMember">
       UPDATE lettnemplyrinfo 
@@ -46,11 +46,17 @@
           EMAIL_ADRES = #{EMAIL_ADRES},
           GROUP_ID = #{GROUP_ID},
           ORGNZT_ID = #{ORGNZT_ID},
-          EMPLYR_STTUS_CODE = #{EMPLYR_STTUS}
+          EMPLYR_STTUS_CODE = #{EMPLYR_STTUS_CODE}
       WHERE
-          EMPLYR_ID = #{EMPLYR_ID}
+          EMPLYR_ID = #{EMPLYR_ID};
    </update>
    <delete id="deleteMember">
       delete from lettnemplyrinfo where EMPLYR_ID = #{EMPLYR_ID}
    </delete>
+   <select id="viewMember" resultType="edu.human.com.member.service.EmployerInfoVO">
+      select * from lettnemplyrinfo where EMPLYR_ID = #{EMPLYR_ID}
+   </select>
+   <select id="selectAuth" resultType="edu.human.com.member.service.AuthVO">
+   	  select * from lettnauthorgroupinfo 
+   </select>
 </mapper>
