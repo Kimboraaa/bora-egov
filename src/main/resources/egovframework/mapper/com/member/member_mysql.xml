@@ -18,6 +18,7 @@
       GROUP_ID,
       ORGNZT_ID,
       EMPLYR_STTUS_CODE
+      SBSCRB_DE
       ) values (
       #{ESNTL_ID},
       #{EMPLYR_ID},
@@ -30,14 +31,17 @@
       #{EMAIL_ADRES},
       #{GROUP_ID},
       #{ORGNZT_ID},
-      #{EMPLYR_STTUS_CODE}
+      #{EMPLYR_STTUS_CODE},
+      now()
       )
    </insert>
    <update id="updateMember">
       UPDATE lettnemplyrinfo 
       SET 
           ESNTL_ID = #{ESNTL_ID},
+          <if test="#PASSWORD != ''">
           PASSWORD = #{PASSWORD},
+          </if>
           PASSWORD_HINT = #{PASSWORD_HINT},
           PASSWORD_CNSR = #{PASSWORD_CNSR},
           USER_NM = #{USER_NM},
@@ -57,6 +61,6 @@
       select * from lettnemplyrinfo where EMPLYR_ID = #{EMPLYR_ID}
    </select>
    <select id="selectAuth" resultType="edu.human.com.member.service.AuthVO">
-   	  select * from lettnauthorgroupinfo 
+      select * from lettnauthorgroupinfo
    </select>
 </mapper>
