@@ -193,10 +193,14 @@ $(document).ready(function(){
             success:function(result){
                if(result == 1) {//조건: 중복아이디 존재한다면
                   //전송버튼 비활성화       
-                  alert(여기까지);
+                  $("#insert_member").on("click",function(e){
+                	 e.preventDefault(); 
+                  });
+               alert("중복아이디 존재");
                }else{
                   //전송버튼 활성화
-                  alert(여기2);
+                  $("#insert_member").unbind();
+                  alert("사용 가능한 아이디입니다.");
                }
             },
             error:function(){
