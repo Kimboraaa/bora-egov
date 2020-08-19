@@ -20,7 +20,7 @@
     <div id="topnavi"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncTopnav" /></div>        
     <!-- //header 끝 --> 
 
-   <!-- container 시작 -->
+	<!-- container 시작 -->
     <div id="container">
         <!-- 좌측메뉴 시작 -->
         <div id="leftmenu"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncLeftmenu" /></div>
@@ -43,87 +43,87 @@
                 
                     <div class="modify_user" >
                         <table >
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          사용자 아이디
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.EMPLYR_ID}"></c:out>
-                          <input id="EMPLYR_ID" name="EMPLYR_ID" type="hidden" value="${memberVO.EMPLYR_ID}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          사용자 이름
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.USER_NM}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          우편번호
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.ZIP}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          집주소
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.HOUSE_ADRES}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          이메일
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.EMAIL_ADRES}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          권한레벨
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <select name="GROUP_ID">
-                             <c:forEach var="auth" items="${authVO}">
-                                <option value="${auth.GROUP_ID}"
-                                <c:if test="${auth.GROUP_ID == memberVO.GROUP_ID}">selected="selected"</c:if>
-                                >
-                                ${auth.GROUP_NM}</option>
-                             </c:forEach>               
-                          </select>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          소속기관
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.ORGNZT_ID}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          휴면계정여부
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.EMPLYR_STTUS_CODE}"></c:out>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          등록일
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${memberVO.SBSCRB_DE}" />
-                       </td>
-                     </tr>
-                     
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	사용자 아이디
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.EMPLYR_ID}"></c:out>
+					           <input id="EMPLYR_ID" name="EMPLYR_ID" type="hidden" value="${memberVO.EMPLYR_ID}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	사용자 이름
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.USER_NM}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	우편번호
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.ZIP}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	집주소
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.HOUSE_ADRES}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	이메일
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.EMAIL_ADRES}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	권한레벨
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <select name="GROUP_ID">
+					           	<c:forEach var="auth" items="${authVO}">
+					           		<option value="${auth.GROUP_ID}"
+					           		<c:if test="${auth.GROUP_ID == memberVO.GROUP_ID}">selected="selected"</c:if>
+					           		>
+					           		${auth.GROUP_NM}</option>
+					           	</c:forEach>					
+					           </select>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	소속기관
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.ORGNZT_ID}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	휴면계정여부
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.EMPLYR_STTUS_CODE}"></c:out>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	등록일
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${memberVO.SBSCRB_DE}" />
+					        </td>
+					      </tr>
+					      
                         </table>
                     </div>
                     
@@ -160,7 +160,7 @@
         </div>  
         <!-- //container 끝 -->
 
-   <!-- footer 시작 -->
+	<!-- footer 시작 -->
     <div id="footer"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncFooter" /></div>
     <!-- //footer 끝 -->
 </div>
@@ -168,24 +168,23 @@
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(document).ready(function(){
-   
-   $("#delete_member").click(function(){
-      if(confirm("정말로 삭제 하시겠습니까?")){
-         
-      }else{
-         return false;
-      }
-      $("#viewForm").attr("action", "<c:url value='/com/member/deleteMember.do'/>");
-      $("#viewForm").attr("method", "post");
-      $("#viewForm").submit();
-   });
-   $("#update_member").click(function(){
-      $("#viewForm").attr("action", "<c:url value='/com/member/updateMember.do'/>");
-      $("#viewForm").submit();
-   });
-   
+	
+	$("#delete_member").click(function(){
+		if(confirm("정말로 삭제 하시겠습니까?")){
+			
+		}else{
+			return false;
+		}
+		$("#viewForm").attr("action", "<c:url value='/com/member/deleteMember.do'/>");
+		$("#viewForm").attr("method", "post");
+		$("#viewForm").submit();
+	});
+	$("#update_member").click(function(){
+		$("#viewForm").attr("action", "<c:url value='/com/member/updateMember.do'/>");
+		$("#viewForm").submit();
+	});
+	
 });
-
 </script>
 </body>
 </html>

@@ -20,7 +20,7 @@
     <div id="topnavi"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncTopnav" /></div>        
     <!-- //header 끝 --> 
 
-   <!-- container 시작 -->
+	<!-- container 시작 -->
     <div id="container">
         <!-- 좌측메뉴 시작 -->
         <div id="leftmenu"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncLeftmenu" /></div>
@@ -43,117 +43,117 @@
                 
                     <div class="modify_user" >
                         <table >
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          사용자 아이디
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <c:out value="${memberVO.EMPLYR_ID}"></c:out>
-                          <input name="EMPLYR_ID" type="hidden" value="${memberVO.EMPLYR_ID}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          사용자 암호
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <input name="PASSWORD" type="text" value="" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          암호 힌트
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <input id="PASSWORD_HINT" name="PASSWORD_HINT" type="text" value="${memberVO.PASSWORD_HINT}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          암호 힌트 답변
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <input id="PASSWORD_CNSR" name="PASSWORD_CNSR" type="text" value="${memberVO.PASSWORD_CNSR}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          사용자 이름
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="USER_NM" type="text" value="${memberVO.USER_NM}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          우편번호
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="ZIP" type="text" value="${memberVO.ZIP}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          집주소
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="HOUSE_ADRES" type="text" value="${memberVO.HOUSE_ADRES}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          이메일
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="EMAIL_ADRES" type="text" value="${memberVO.EMAIL_ADRES}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          권한레벨
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <select name="GROUP_ID">
-                             <c:forEach var="auth" items="${authVO}">
-                                <option value="${auth.GROUP_ID}"
-                                <c:if test="${auth.GROUP_ID == memberVO.GROUP_ID}">selected="selected"</c:if>
-                                >
-                                ${auth.GROUP_NM}</option>
-                             </c:forEach>               
-                          </select>
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          소속기관
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="ORGNZT_ID" type="text" value="${memberVO.ORGNZT_ID}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          휴면계정여부
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          
-                          <input name="EMPLYR_STTUS_CODE" type="text" value="${memberVO.EMPLYR_STTUS_CODE}" />
-                       </td>
-                     </tr>
-                     <tr> 
-                       <th width="20%" height="23" class="required_text" nowrap >
-                          등록일
-                       </th>
-                       <td width="80%" nowrap="nowrap">
-                          <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${memberVO.SBSCRB_DE}" />
-                       </td>
-                     </tr>
-                     
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	사용자 아이디
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <c:out value="${memberVO.EMPLYR_ID}"></c:out>
+					           <input name="EMPLYR_ID" type="hidden" value="${memberVO.EMPLYR_ID}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	사용자 암호
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <input name="PASSWORD" type="text" value="" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	암호 힌트
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <input id="PASSWORD_HINT" name="PASSWORD_HINT" type="text" value="${memberVO.PASSWORD_HINT}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	암호 힌트 답변
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <input id="PASSWORD_CNSR" name="PASSWORD_CNSR" type="text" value="${memberVO.PASSWORD_CNSR}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	사용자 이름
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="USER_NM" type="text" value="${memberVO.USER_NM}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	우편번호
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="ZIP" type="text" value="${memberVO.ZIP}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	집주소
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="HOUSE_ADRES" type="text" value="${memberVO.HOUSE_ADRES}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	이메일
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="EMAIL_ADRES" type="text" value="${memberVO.EMAIL_ADRES}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	권한레벨
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <select name="GROUP_ID">
+					           	<c:forEach var="auth" items="${authVO}">
+					           		<option value="${auth.GROUP_ID}"
+					           		<c:if test="${auth.GROUP_ID == memberVO.GROUP_ID}">selected="selected"</c:if>
+					           		>
+					           		${auth.GROUP_NM}</option>
+					           	</c:forEach>					
+					           </select>
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	소속기관
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="ORGNZT_ID" type="text" value="${memberVO.ORGNZT_ID}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	휴면계정여부
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           
+					           <input name="EMPLYR_STTUS_CODE" type="text" value="${memberVO.EMPLYR_STTUS_CODE}" />
+					        </td>
+					      </tr>
+					      <tr> 
+					        <th width="20%" height="23" class="required_text" nowrap >
+					        	등록일
+					        </th>
+					        <td width="80%" nowrap="nowrap">
+					           <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${memberVO.SBSCRB_DE}" />
+					        </td>
+					      </tr>
+					      
                         </table>
                     </div>
                     
@@ -185,7 +185,7 @@
         </div>  
         <!-- //container 끝 -->
 
-   <!-- footer 시작 -->
+	<!-- footer 시작 -->
     <div id="footer"><c:import url="/EgovPageLink.do?link=main/inc/EgovIncFooter" /></div>
     <!-- //footer 끝 -->
 </div>
@@ -193,24 +193,23 @@
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(document).ready(function(){
-   
-   $("#update_member").click(function(){
-      if($("#PASSWORD_HINT").val() == '') {
-         alert("암호힌트값은 필수 입니다.")
-         $("#PASSWORD_HINT").focus();
-         return;
-      }
-      if($("#PASSWORD_CNSR").val() == '') {
-         alert("암호힌트 답변값은 필수 입니다.")
-         $("#PASSWORD_CNSR").focus();
-         return;
-      }
-      $("#updateForm").attr("action", "<c:url value='/com/member/updateMember.do'/>");
-      $("#updateForm").submit();
-   });
-   
+	
+	$("#update_member").click(function(){
+		if($("#PASSWORD_HINT").val() == '') {
+			alert("암호힌트값은 필수 입니다.");
+			$("#PASSWORD_HINT").focus();
+			return;
+		}
+		if($("#PASSWORD_CNSR").val() == '') {
+			alert("암호힌트 답변값은 필수 입니다.");
+			$("#PASSWORD_CNSR").focus();
+			return;
+		}
+		$("#updateForm").attr("action", "<c:url value='/com/member/updateMember.do'/>");
+		$("#updateForm").submit();
+	});
+	
 });
-
 </script>
 </body>
 </html>

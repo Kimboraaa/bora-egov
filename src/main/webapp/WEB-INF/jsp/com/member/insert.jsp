@@ -137,7 +137,7 @@
                        소속기관
                        </th>
                        <td width="80%" nowrap="nowrap">
-                         <input name="ORGNZT_ID" type="text" value="" />
+                         <input name="ORGNZT_ID" type="text" value="ORGNZT_0000000000000" />
                        </td>
                      </tr>
                      <!-- 휴먼계정 초기값 P -->
@@ -151,9 +151,9 @@
                       <table border="0" cellspacing="0" cellpadding="0" align="center">
                         <tr> 
                           <td>
-                              <a href="#LINK" id="insert_member">
+                              <button type="button" disabled id="insert_member">
                               <spring:message code="button.create" />
-                              </a>
+                              </button>
                           </td>
                           <td width="10"></td>
                           <td>
@@ -193,14 +193,14 @@ $(document).ready(function(){
             success:function(result){
                if(result == 1) {//조건: 중복아이디 존재한다면
                   //전송버튼 비활성화       
-                  $("#insert_member").on("click",function(e){
-                	 e.preventDefault(); 
-                  });
-               alert("중복아이디 존재");
+                  alert("중복아이디가 존재합니다.");
+                  $("#insert_member").attr("disabled",true);
+                  $("#insert_member").css({"opacity":"0.5","background-color":"grayscale"});
                }else{
                   //전송버튼 활성화
-                  $("#insert_member").unbind();
                   alert("사용 가능한 아이디입니다.");
+                  $("#insert_member").attr("disabled",false);
+                  $("#insert_member").css({"opacity":"1","background-color":"white"});
                }
             },
             error:function(){
